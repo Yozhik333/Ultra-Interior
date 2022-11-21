@@ -1,0 +1,80 @@
+.partner {
+  &-inside {
+    .btn {
+      max-width: 229px;
+      margin: 0 auto;
+      text-align: left;
+    }
+  }
+  &__headline {
+    text-align: center;
+    margin-bottom: 40px;
+    h2 {
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 24px;
+    }
+  }
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    &-img {
+      margin-bottom: 26px;
+    }
+    &-item {
+      width: 45%;
+      text-align: center;
+      margin-bottom: 55px;
+      padding: 0 50px;
+      h4 {
+        font-weight: 700;
+        margin-bottom: 25px;
+        color: #000;
+      }
+      p {
+        color: #000;
+      }
+    }
+  }
+  @media (max-width: 1023px) {
+    &__headline {
+      p {
+        font-size: 16px;
+      }
+    }
+    &__items {
+      &-img {
+        margin-bottom: 10px;
+      }
+      &-item {
+        padding: 0;
+        margin-bottom: 20px;
+        h4 {
+          margin-bottom: 10px;
+          font-size: 18px;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+.partner-ready {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    background-image: url("../images/branch.png");
+    background-repeat: no-repeat;
+    width: 233.73px;
+    height: 334.92px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+  }
+}

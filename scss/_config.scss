@@ -1,0 +1,469 @@
+/* USER VARIABLES SECTION */
+
+:root {
+  --accent: #0099ffb0;
+  --text: #404040;
+  --regular-text: 16px;
+  --lineheight: 1.4;
+  --userfont: gilroy, sans-serif;
+  --systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+}
+
+/* BOOTSTRAP SETTINGS SECTION */
+
+/* gutter 20px (10px + 10px). Comment this code for default gutter start at 1.5rem (24px) wide. */
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+  --bs-gutter-x: 0.625rem;
+}
+.row,
+.row > * {
+  --bs-gutter-x: 1.25rem;
+}
+
+/* FONTS LOAD SECTION */
+
+@font-face {
+  src: url("../fonts/GilroyRegular.woff2") format("woff2");
+  font-family: "gilroy";
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  src: url("../fonts/GilroyMedium.woff2") format("woff2");
+  font-family: "gilroy";
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  src: url("../fonts/GilroySemibold.woff2") format("woff2");
+  font-family: "gilroy";
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  src: url("../fonts/GilroyBold.woff2") format("woff2");
+  font-family: "gilroy";
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  src: url("../fonts/GilroyBlack.woff2") format("woff2");
+  font-family: "gilroy";
+  font-weight: 900;
+  font-style: normal;
+}
+
+// FUNCTIONS
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+@function fs($f-min, $f-max, $w-min, $w-max, $units: px) {
+  $f-min: strip-unit($f-min);
+  $f-max: strip-unit($f-max);
+  $w-min: strip-unit($w-min);
+  $w-max: strip-unit($w-max);
+
+  $k: ($f-max - $f-min) / ($w-max - $w-min);
+  $b: $f-min - $k * $w-min;
+
+  $b: $b + $units;
+
+  @return calc(#{$k} * 100vw + #{$b});
+}
+
+@mixin fluidFontSize($f-min, $f-max, $w-min, $w-max, $fallback: false) {
+  font-size: $f-min;
+
+  @media (min-width: $w-min) {
+    @if ($fallback) {
+      font-size: $fallback;
+    }
+    font-size: fs($f-min, $f-max, $w-min, $w-max, px);
+  }
+  @media (min-width: $w-max) {
+    font-size: $f-max;
+  }
+}
+
+/* GENERAL CSS SETTINGS */
+
+::placeholder {
+  color: #777;
+}
+::selection {
+  background-color: var(--accent);
+  color: #fff;
+}
+input,
+textarea {
+  outline: none;
+}
+input:focus:required:invalid,
+textarea:focus:required:invalid {
+  border-color: red;
+}
+input:required:valid,
+textarea:required:valid {
+  border-color: green;
+}
+
+body {
+  font-family: var(--userfont);
+  font-size: var(--regular-text);
+  line-height: var(--lineheight);
+  color: var(--text);
+  min-width: 320px;
+  position: relative;
+  overflow-x: hidden;
+  background: #f7f7f7;
+}
+
+/* USER STYLES */
+
+.image {
+  max-width: 100%;
+  margin-bottom: var(--bs-gutter-x);
+  border-radius: 4px;
+}
+
+.accent {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* TEXT TAGS */
+p {
+  line-height: 140%;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 0;
+  @media (max-width: 1023px) {
+    line-height: 110%;
+  }
+}
+ol,
+ul {
+  list-style-type: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.interior-list {
+  li {
+    position: relative;
+    display: flex;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+    color: #404040;
+    align-items: center;
+    padding-left: 30px;
+    margin-bottom: 30px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      position: absolute;
+      left: 15px;
+      top: 10px;
+      display: block;
+      border-radius: 50%;
+      background-color: #000;
+    }
+  }
+  @media (max-width: 1023px) {
+    li {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+  }
+}
+a {
+  text-decoration: none;
+  transition: 0.3s ease-out;
+  color: var(--text);
+  &:hover {
+    color: darken(#efe7db, 10%);
+  }
+}
+
+// HEADLINES
+h6 {
+  color: #404040;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 59px;
+  letter-spacing: 0.02em;
+  margin-bottom: 24px;
+  @media (max-width: 1023px) {
+    font-size: 24px;
+    line-height: 110%;
+    margin-bottom: 10px;
+  }
+}
+h2 {
+  color: #404040;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 50px;
+  letter-spacing: 0.02em;
+  @media (max-width: 1023px) {
+    font-size: 20px;
+    line-height: 110%;
+  }
+}
+.headline-line {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 29px;
+  h2 {
+    margin-bottom: 0;
+    flex: 0 0 auto;
+  }
+  a {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    color: #635258;
+    display: block;
+    position: relative;
+    flex: 1 0 auto;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      background: #635258;
+      left: 0;
+      right: 0;
+      height: 2px;
+      transition: 0.3s ease-out;
+    }
+    &:hover {
+      color: darken(#efe7db, 10%);
+      &::before {
+        background: darken(#efe7db, 10%);
+      }
+    }
+  }
+  span {
+    position: static;
+    display: block;
+    opacity: 0.2;
+    height: 2px;
+    background: #404040;
+    width: 100%;
+    margin-left: 51px;
+    margin-right: 46px;
+    margin-top: 8px;
+  }
+  @media (max-width: 1023px) {
+    a {
+      font-size: 18px;
+    }
+    span {
+      margin-left: 7%;
+      margin-right: 7%;
+    }
+  }
+}
+
+.br-none {
+  @media (max-width: 1023px) {
+    display: none;
+  }
+}
+
+// BUTTONS
+button {
+  outline: 0;
+  border: 0;
+  padding: 0;
+  background: none;
+  transition: 0.3s ease-out;
+}
+.btn {
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #404040;
+  display: block;
+  background: #efe7db;
+  border-radius: 8px;
+  padding: 0 20px;
+  border: 2px solid #efe7db;
+  width: 100%;
+  height: 60px;
+  cursor: pointer;
+}
+.btn-default {
+  transition: 0.2s ease;
+  &:hover {
+    background: transparent;
+    color: lighten(#404040, 30%);
+  }
+}
+.btn-outline {
+  background: transparent;
+  border: 2px solid #efe7db;
+  border-radius: 6px;
+  &:hover {
+    background: #efe7db;
+  }
+}
+.btn-arrow {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-bottom: 2px solid #404040;
+    border-right: 2px solid #404040;
+    right: 20px;
+    transform: rotate(-45deg);
+    transition: 0.2s ease;
+  }
+  &:hover {
+    &::before {
+      right: -20px;
+      opacity: 0;
+    }
+  }
+}
+
+// CONTAINERS
+.wrapper,
+body,
+html {
+  height: 100%;
+}
+.wrapper-in {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+.content {
+  // overflow: hidden
+  flex: 1;
+}
+.custom-container {
+  max-width: 1310px;
+  padding: 0 10px;
+  width: 100%;
+  margin: 0 auto;
+  @media (max-width: 1023px) {
+    padding: 0 10px;
+  }
+}
+
+// TABS
+.tabs > input[type="radio"] {
+  display: none;
+}
+
+.tabs > input[type="radio"]:checked + label {
+  border-bottom: 4px solid #635258;
+}
+
+.tabs > div {
+  /* скрыть контент по умолчанию */
+  display: none;
+}
+
+/* отобразить контент, связанный с выбранной радиокнопкой (input type="radio") */
+#tab-btn-1:checked ~ #content-1,
+#tab-btn-2:checked ~ #content-2,
+#tab-btn-3:checked ~ #content-3 {
+  display: block;
+}
+.tabs {
+  text-align: center;
+}
+
+.tabs > label {
+  display: inline-block;
+  letter-spacing: 0.02em;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: transparent;
+  border-bottom: 4px solid transparent;
+  padding: 0px 7px 3px;
+  font-size: 24px;
+  line-height: 30px;
+  transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  margin-right: 74px;
+  margin-bottom: 72px;
+  cursor: pointer;
+  &:hover {
+    border-bottom: 4px solid #63525875;
+  }
+  @media (max-width: 1023px) {
+    @include fluidFontSize(14px, 24px, 320px, 1023px);
+    margin-right: 3px;
+    margin-bottom: 10px;
+    line-height: 140%;
+  }
+}
+
+.tabs > label:first-of-type {
+  margin-left: 0;
+}
+
+// BREADCRUMBS
+.breadcrumbs {
+  display: flex;
+  padding-top: 22px;
+  &-wrapper {
+    margin-bottom: 22px;
+  }
+  li {
+    margin-right: 12px;
+    padding-right: 12px;
+    letter-spacing: 0.02em;
+    position: relative;
+    &.active {
+      font-weight: 700;
+      color: #635258;
+    }
+    &:not(:last-child) {
+      a {
+        &::before {
+          content: "";
+          position: absolute;
+          border-right: 1px solid #000;
+          border-bottom: 1px solid #000;
+          width: 8px;
+          height: 8px;
+          top: 7px;
+          right: 0;
+          transform: rotate(-45deg);
+          transition: 0.3s ease-out;
+        }
+        &:hover {
+          &::before {
+            border-bottom: 1px solid #dfcfb8;
+            border-right: 1px solid #dfcfb8;
+          }
+        }
+      }
+    }
+  }
+}

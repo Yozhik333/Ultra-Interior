@@ -1,0 +1,84 @@
+.contacts {
+  padding: 46px 0 89px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    background: #efe7db;
+    bottom: 89px;
+    top: 113px;
+    left: calc(50% + 500px);
+    right: 0;
+    max-height: 609px;
+    z-index: -1;
+  }
+  &-inside {
+    display: flex;
+  }
+  &-left {
+    width: 50%;
+    padding-top: 128px;
+    padding-right: 48px;
+    p {
+      font-size: 24px;
+      margin-bottom: 28px;
+    }
+    form {
+      max-width: 410px;
+      input {
+        width: 100%;
+        display: block;
+        margin-bottom: 8px;
+        border: 1px solid #404040;
+        border-radius: 6px;
+        padding: 23px 31px 20px;
+        color: #363636;
+      }
+      button {
+        text-align: left;
+        padding-left: 24px;
+      }
+    }
+  }
+  &-right {
+    width: 50%;
+    &-img {
+      position: relative;
+      img {
+        width: calc(100% + 154px);
+      }
+    }
+  }
+  @media (max-width: 1023px) {
+    padding: 30px 0;
+    &-inside {
+      flex-wrap: wrap;
+    }
+    &-left {
+      width: 100%;
+      padding-top: 0;
+      padding-right: 0;
+      h2 {
+        text-align: center;
+      }
+      p {
+        font-size: 14px;
+        text-align: center;
+      }
+      form {
+        input {
+          padding: 10px 31px;
+        }
+      }
+    }
+    &-right {
+      width: 100%;
+      display: none; // может и не надо убирать
+      &-img {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

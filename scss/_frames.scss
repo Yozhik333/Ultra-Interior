@@ -1,0 +1,251 @@
+.frame-series {
+  h2 {
+    text-align: center;
+    margin-bottom: 38px;
+  }
+  &__blocks {
+    .item-block-wrapper {
+      width: 33.3%;
+      height: 426px;
+    }
+  }
+  @media (max-width: 1023px) {
+    &__blocks {
+      .item-block {
+        padding-bottom: 50%;
+        &-wrapper {
+          height: auto;
+        }
+      }
+    }
+  }
+  @media (max-width: 578px) {
+    h2 {
+      margin-bottom: 20px;
+    }
+    &__blocks {
+      .item-block {
+        padding-bottom: 25%;
+        &-wrapper {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.built-in-series {
+  margin-top: 70px;
+  h2 {
+    text-align: center;
+    margin-bottom: 38px;
+  }
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+  @media (max-width: 1023px) {
+    h2 {
+      margin-bottom: 20px;
+    }
+  }
+}
+.built-in-series-white {
+  h2 {
+    margin: 40px 0 32px;
+  }
+  @media (max-width: 1023px) {
+    h2 {
+      text-align: center;
+    }
+  }
+}
+
+.mech-overlay-card {
+  min-height: 305px;
+  max-width: 204px;
+  width: 100%;
+  height: 100%;
+  &-wrapper {
+    width: 20%;
+    padding: 0 15px;
+    margin-bottom: 48px;
+  }
+  &__img {
+    margin-bottom: 16px;
+    height: 223px;
+    width: 204px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__title {
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+  }
+  &__code {
+    strong {
+      margin-right: 3px;
+    }
+  }
+  @media (max-width: 1023px) {
+    margin: 0 auto;
+    &-wrapper {
+      width: 33.3%;
+    }
+  }
+  @media (max-width: 578px) {
+    min-height: auto;
+    &-wrapper {
+      width: 50%;
+    }
+    &__img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+// FRAMES
+.frames {
+  margin-bottom: 100px;
+  &-wrapper {
+    margin-top: 88px;
+  }
+  &__big {
+    display: flex;
+    &-img {
+      width: 50%;
+      img {
+        width: 100%;
+      }
+    }
+    &-title {
+      h5 {
+        color: #fff;
+        text-decoration: underline;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        margin-bottom: 6px;
+      }
+      p {
+        color: #fff;
+        margin-bottom: 6px;
+      }
+    }
+    &-text {
+      width: 50%;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      &--black {
+        h5 {
+          color: #404040;
+        }
+        p {
+          color: #404040;
+        }
+      }
+    }
+    &-another {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+  &__duo {
+    display: flex;
+  }
+  &__small {
+    display: flex;
+    width: 50%;
+    &-img {
+      width: 50%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &-title {
+      h5 {
+        color: #fff;
+        text-decoration: underline;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        margin-bottom: 6px;
+      }
+      p {
+        color: #fff;
+        margin-bottom: 6px;
+      }
+    }
+    &-text {
+      width: 50%;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      &--black {
+        h5 {
+          color: #404040;
+        }
+        p {
+          color: #404040;
+        }
+      }
+    }
+    &-another {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+  @media (max-width: 1023px) {
+    margin-bottom: 60px;
+    &-wrapper {
+      .custom-container {
+        padding: 0;
+      }
+      .headline-line {
+        margin-bottom: 15px;
+        padding: 0 10px;
+      }
+    }
+    &__big {
+      flex-direction: column;
+      &-img {
+        width: 100%;
+      }
+      &-text {
+        width: 100%;
+      }
+    }
+    &__duo {
+      flex-direction: column;
+    }
+    &__small {
+      width: 100%;
+      &-img {
+        width: 100%;
+      }
+      &-text {
+        width: 100%;
+      }
+    }
+  }
+  @media (max-width: 578px) {
+    margin-bottom: 40px;
+    &__small {
+      width: 100%;
+      flex-direction: column;
+    }
+  }
+}

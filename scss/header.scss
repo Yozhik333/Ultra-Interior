@@ -1,0 +1,237 @@
+.header {
+  padding: 20px 0 31px;
+  background-color: #fff;
+  &-inside {
+  }
+  &-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+      width: 241px;
+      height: 87px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  &-search {
+    max-width: 520px;
+    width: 100%;
+    input {
+      width: 100%;
+      line-height: 0;
+      border: none;
+      font-size: 18px;
+      padding: 0 0 15px 0;
+      color: #404040;
+      border-bottom: 2px solid #d9d9d9;
+      background: transparent;
+    }
+  }
+  .call-number {
+    text-align: right;
+    a {
+      display: block;
+      font-weight: 700;
+      font-size: 18px;
+      &:hover {
+        color: darken(#efe7db, 10%);
+      }
+    }
+    button {
+      position: relative;
+      color: #635258;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        background: #635258;
+        left: 0;
+        right: 0;
+        height: 2px;
+        transition: 0.3s ease-out;
+      }
+      &:hover {
+        color: darken(#efe7db, 10%);
+        &::before {
+          background: darken(#efe7db, 10%);
+        }
+      }
+    }
+  }
+  &-login {
+    font-weight: 500;
+    font-size: 18px;
+  }
+  &-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 22px;
+    button {
+      margin-left: 32px;
+      max-width: 220px;
+    }
+  }
+
+  nav {
+    max-width: 1038px;
+    width: 100%;
+    background: #ebebeb85;
+    border-radius: 8px;
+    ul {
+      padding: 19px 33px 19px 35px;
+      display: flex;
+      justify-content: space-between;
+      li {
+        a {
+          font-weight: 500;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  @media (max-width: 1023px) {
+    position: relative;
+    padding: 10px 0 40px;
+    &-top {
+      .logo {
+        height: auto;
+        width: 141px;
+      }
+    }
+    &-search {
+      position: absolute;
+      bottom: 0;
+      left: 10px;
+      right: 10px;
+      width: auto;
+      input {
+        padding: 0 0 2px 0;
+        margin-bottom: 3px;
+      }
+    }
+    .call-number {
+      display: none;
+    }
+    &-bottom {
+      display: none;
+    }
+  }
+}
+
+.footer {
+  background: #efefef;
+  position: relative;
+  padding: 60px 0;
+  &-anchor {
+    position: absolute;
+    left: 50%;
+    bottom: 25%;
+    transform: translateX(-50%);
+    &:hover {
+      transform: translateX(-50%) translateY(-15%);
+    }
+  }
+  &-inside {
+    display: flex;
+    justify-content: space-between;
+  }
+  &-left {
+    .logo {
+      max-width: 455px;
+      height: 194px;
+      img {
+        width: 100%;
+      }
+    }
+    &__social {
+      p {
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 43px;
+        margin-top: 55px;
+      }
+      a {
+        margin-right: 66px;
+        svg {
+          fill: #c7c7c7;
+          transition: 0.2s ease;
+        }
+        &:hover {
+          svg {
+            fill: #635258;
+          }
+        }
+      }
+    }
+  }
+  &-center {
+    nav {
+      ul {
+        li {
+          margin-bottom: 16px;
+          a {
+            color: #404040;
+            font-size: 22px;
+            line-height: 26px;
+            &:hover {
+              color: #635258;
+              font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+  }
+  &-right {
+    &__address {
+      margin-bottom: 20px;
+      h4 {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 0;
+      }
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+  @media (max-width: 1023px) {
+    padding: 20px 0 60px;
+    &-anchor {
+      bottom: 15px;
+    }
+    &-inside {
+      flex-direction: column;
+    }
+    &-left {
+      text-align: center;
+      .logo {
+        margin: 0 auto;
+        max-width: 315px;
+        height: auto;
+      }
+      &__social {
+        margin-bottom: 40px;
+        p {
+          margin: 20px 0 10px;
+        }
+        a {
+          margin: 0 20px;
+        }
+      }
+    }
+    &-center {
+      nav {
+        ul {
+          li {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
