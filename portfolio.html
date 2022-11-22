@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!-- <base href="/"> -->
+
+    <title>Портфолио</title>
+    <meta name="description" content="Ultra Interior" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <link rel="icon" href="images/favicon.png" />
+    <meta property="og:image" content="images/preview.jpg" />
+
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap-reboot.min.css" />
+
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/media.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+
+    <!-- <script src="libs/jquery/jquery-3.6.0.min.js" defer></script> -->
+
+    <script src="js/swiper-bundle.min.js" defer></script>
+    <script src="js/common.js" defer></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="wrapper-in">
+        <!-- HEADER START -->
+        <iframe
+          src="header.html"
+          onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"
+        ></iframe>
+        <!-- HEADER END -->
+
+        <!-- CONTENT START-->
+        <main class="content">
+          <div class="custom-container">
+            <div class="breadcrumbs-wrapper">
+              <ul class="breadcrumbs">
+                <li><a href="/">Главная</a></li>
+                <li><a href="">Портфолио</a></li>
+                <li class="active">Название проекта</li>
+              </ul>
+            </div>
+            <!-- /.breadcrumbs-wrapper -->
+          </div>
+          <!-- /.custom-container -->
+
+          <section class="portfolio-wrapper">
+            <div class="custom-container">
+              <div class="portfolio">
+                <div class="portfolio__headline">
+                  <h2>Название проекта</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Tortor viverra eleifend purus a. Tincidunt amet, ac sed
+                    vitae egestas egestas a. Massa lectus magna cursus aliquam
+                    felis, nunc cursus turpis. Senectus tristique enim nunc
+                    massa duis quis. Suscipit consequat malesuada massa diam
+                    dictumst eu dolor dictum et. Eget varius nulla donec nulla
+                    bibendum amet arcu tortor. In vel risus nunc tristique
+                    dignissim. Suspendisse ut neque, purus et, tortor tortor
+                    dictumst penatibus massa. Vitae enim ut consectetur
+                    scelerisque nulla id scelerisque semper. Morbi cras lectus
+                    purus vulputate ut turpis sed maecenas imperdiet. Cras quis
+                    faucibus ullamcorper a. Ut eleifend vitae vitae pharetra
+                    pellentesque eget facilisis. Quis amet, a faucibus id purus
+                    fermentum. Habitant.
+                  </p>
+                </div>
+
+                <div class="portfolio__blocks">
+                  <div class="portfolio__blocks-img-1">
+                    <img src="images/services/portfolio1.png" alt="Портфолио" />
+                  </div>
+                  <div class="portfolio__blocks-img-2 item-block">
+                    <div class="item-block-img">
+                      <img
+                        src="images/services/portfolio2.png"
+                        alt="Портфолио"
+                      />
+                    </div>
+                    <h4>Название проекта</h4>
+                    <a href="#" class="btn btn-outline">Посмотреть</a>
+                  </div>
+                  <div class="portfolio__blocks-img-3">
+                    <img src="images/services/portfolio3.png" alt="Портфолио" />
+                  </div>
+                  <div class="portfolio__blocks-img-4">
+                    <img src="images/services/portfolio4.png" alt="Портфолио" />
+                  </div>
+                  <div class="portfolio__blocks-img-5">
+                    <img src="images/services/portfolio5.png" alt="Портфолио" />
+                  </div>
+                  <div class="portfolio__blocks-img-6">
+                    <img src="images/services/portfolio6.png" alt="Портфолио" />
+                  </div>
+                </div>
+                <!-- /.portfolio__blocks -->
+              </div>
+            </div>
+            <!-- /.custom-container -->
+          </section>
+          <!-- /.portfolio-name -->
+        </main>
+        <!-- CONTENT END-->
+
+        <!-- FOOTER START -->
+        <iframe
+          src="footer.html"
+          onload="this.before((this.contentDocument.body||this.contentDocument).children[0]);this.remove()"
+        ></iframe>
+        <!-- FOOTER END -->
+      </div>
+      <!-- /.wrapper-in -->
+    </div>
+    <!-- /.wrapper -->
+  </body>
+</html>

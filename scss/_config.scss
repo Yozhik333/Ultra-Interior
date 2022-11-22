@@ -127,6 +127,12 @@ body {
   overflow-x: hidden;
   background: #f7f7f7;
 }
+body._lock {
+  overflow: hidden;
+  .wrapper {
+    overflow: hidden;
+  }
+}
 
 /* USER STYLES */
 
@@ -220,7 +226,7 @@ h2 {
   line-height: 50px;
   letter-spacing: 0.02em;
   @media (max-width: 1023px) {
-    font-size: 20px;
+    @include fluidFontSize(20px, 40px, 320px, 1023px);
     line-height: 110%;
   }
 }

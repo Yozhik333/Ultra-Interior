@@ -27,6 +27,9 @@
       color: #404040;
       border-bottom: 2px solid #d9d9d9;
       background: transparent;
+      border-radius: none;
+      -webkit-appearance: none;
+      -webkit-border-radius: 0;
     }
   }
   .call-number {
@@ -70,6 +73,9 @@
     display: flex;
     justify-content: space-between;
     padding-top: 22px;
+    &_active {
+      display: block;
+    }
     button {
       margin-left: 32px;
       max-width: 220px;
@@ -93,10 +99,32 @@
       }
     }
   }
+
+  &-burger {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    z-index: 51;
+    right: 10px;
+    width: 40px;
+    top: 57px;
+    height: 40px;
+    font-size: 24px;
+    background: #efe7db;
+    border-radius: 50%;
+    transition: 0.2s ease-out;
+    text-align: center;
+    user-select: none;
+    &._active {
+      transition: 0.2s ease-out;
+      top: 40px;
+    }
+  }
   @media (max-width: 1023px) {
-    position: relative;
-    padding: 10px 0 40px;
+    padding: 10px 0 0;
     &-top {
+      position: relative;
+      padding-bottom: 40px;
       .logo {
         height: auto;
         width: 141px;
@@ -105,19 +133,74 @@
     &-search {
       position: absolute;
       bottom: 0;
-      left: 10px;
-      right: 10px;
+      left: 0;
+      right: 60px;
       width: auto;
+      max-width: initial;
       input {
         padding: 0 0 2px 0;
         margin-bottom: 3px;
       }
     }
     .call-number {
-      display: none;
+      display: block;
+      a {
+        @include fluidFontSize(12px, 18px, 320px, 1023px);
+      }
+      button {
+        display: none;
+      }
+    }
+    &-login {
+      a {
+        @include fluidFontSize(12px, 18px, 320px, 1023px);
+      }
+    }
+    &-burger {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s ease-out;
+      z-index: 51;
     }
     &-bottom {
-      display: none;
+      display: block;
+      position: absolute;
+      left: -200%;
+      top: 0;
+      bottom: 0;
+      right: auto;
+      padding-top: 0;
+      height: 100%;
+      opacity: 0;
+      transition: 0.3s ease-out;
+      z-index: 50;
+      &._active {
+        opacity: 1;
+        left: 0;
+        right: 0;
+      }
+      nav {
+        border-radius: 0;
+        height: 100%;
+        background: rgba(235, 235, 235, 1);
+        padding-top: 100px;
+        ul {
+          flex-direction: column;
+          li {
+            margin-bottom: 15px;
+          }
+        }
+      }
+      button {
+        top: 0;
+        top: 30px;
+        left: 30px;
+        position: absolute;
+        margin: 0 auto;
+        bottom: auto;
+        z-index: 51;
+      }
     }
   }
 }
@@ -230,6 +313,13 @@
           li {
             text-align: center;
           }
+        }
+      }
+    }
+    &-right {
+      &__address {
+        br {
+          display: none;
         }
       }
     }
