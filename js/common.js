@@ -88,6 +88,31 @@ const instSlider = new Swiper('.inst-swiper', {
 	},
 });
 
+const portfolioSlider = new Swiper(".portfolio-swiper", {
+	effect: "creative",
+	allowTouchMove: false,
+	creativeEffect: {
+		prev: {
+			shadow: true,
+			translate: [0, 0, -800],
+			rotate: [180, 0, 0],
+		},
+		next: {
+			shadow: true,
+			translate: [0, 0, -800],
+			rotate: [-180, 0, 0],
+		},
+	},
+	pagination: {
+		el: ".swiper-pagination",
+		clickable: true,
+	},
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+
 const trustSwiper = new Swiper('.trust-swiper', {
 	slidesPerView: 4.5,
 	spaceBetween: 94,

@@ -331,7 +331,6 @@
 .inst-slider {
   padding: 0 150px 50px;
   margin: 0 -150px;
-  overflow-y: hidden;
   &-wrapper {
     margin-bottom: 107px;
     position: relative;
@@ -380,5 +379,209 @@
     width: 411px;
     height: 380px;
     background: #efefef;
+  }
+  @media (max-width: 1023px) {
+    .swiper-navs .swiper-button-next {
+      top: auto;
+      bottom: -55px;
+      right: 10px;
+    }
+    .swiper-navs .swiper-button-prev {
+      top: auto;
+      bottom: -55px;
+      left: 10px;
+    }
+  }
+}
+
+// MAIN-PORTFOLIO
+.main-portfolio {
+  margin-bottom: 100px;
+  h2 {
+    margin-bottom: 33px;
+    text-align: center;
+  }
+}
+.portfolio-swiper {
+  width: 1290px;
+  height: 874px;
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+  }
+  &__block {
+    width: 300px;
+    position: relative;
+    overflow: hidden;
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   left: 0;
+    //   top: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   background: rgba(255, 255, 255, 0.85);
+    //   display: block;
+    //   z-index: -1;
+    // }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 11px;
+      top: 11px;
+      right: 11px;
+      bottom: 11px;
+      border: 1px solid #635258;
+      display: block;
+      z-index: -1;
+    }
+    &:hover {
+      &::after {
+        z-index: 4;
+      }
+      .portfolio-swiper__text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 3;
+        top: 0;
+        h4 {
+          text-align: center;
+        }
+        p {
+          display: block;
+          margin-top: 15px;
+        }
+      }
+      .portfolio-swiper__img {
+        img {
+          filter: blur(10px);
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.3s ease-out;
+    }
+  }
+  &__text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 29px 28px 26px 28px;
+    background: rgba(255, 255, 255, 0.85);
+    h4 {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 25px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #404040;
+      margin-bottom: 0;
+    }
+    p {
+      display: none;
+    }
+  }
+
+  .portfolio-swiper__block1 {
+    grid-area: 1 / 1 / 3 / 3;
+    width: 630px;
+    height: 572px;
+  }
+  .portfolio-swiper__block2 {
+    grid-area: 1 / 3 / 2 / 4;
+  }
+  .portfolio-swiper__block3 {
+    grid-area: 1 / 4 / 2 / 5;
+  }
+  .portfolio-swiper__block4 {
+    grid-area: 2 / 3 / 3 / 4;
+  }
+  .portfolio-swiper__block5 {
+    grid-area: 2 / 4 / 3 / 5;
+  }
+  .portfolio-swiper__block6 {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  .portfolio-swiper__block7 {
+    grid-area: 3 / 2 / 4 / 3;
+  }
+  .portfolio-swiper__block8 {
+    grid-area: 3 / 3 / 4 / 5;
+    width: 630px;
+    height: 272px;
+  }
+  @media (max-width: 1023px) {
+    width: auto;
+    height: auto;
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      grid-column-gap: 10px;
+      grid-row-gap: 10px;
+    }
+    &__block {
+      width: auto;
+      height: auto;
+    }
+    &__text {
+      padding: 9px 18px 6px 18px;
+      h4 {
+        line-height: 110%;
+        @include fluidFontSize(14px, 20px, 320px, 1023px);
+      }
+    }
+    .portfolio-swiper__block1 {
+      grid-area: 1 / 1 / 2 / 2;
+      width: auto;
+      height: auto;
+    }
+    .portfolio-swiper__block2 {
+      grid-area: 1 / 2 / 2 / 3;
+    }
+    .portfolio-swiper__block3 {
+      grid-area: 2 / 1 / 3 / 2;
+    }
+    .portfolio-swiper__block4 {
+      grid-area: 2 / 2 / 3 / 3;
+    }
+    .portfolio-swiper__block5 {
+      grid-area: 3 / 1 / 4 / 2;
+    }
+    .portfolio-swiper__block6 {
+      grid-area: 3 / 2 / 4 / 3;
+    }
+    .portfolio-swiper__block7 {
+      grid-area: 4 / 1 / 5 / 2;
+    }
+    .portfolio-swiper__block8 {
+      grid-area: 4 / 2 / 5 / 3;
+      width: auto;
+      height: auto;
+    }
+    .swiper-navs .swiper-button-next {
+      top: auto;
+      bottom: -55px;
+      right: 10px;
+    }
+    .swiper-navs .swiper-button-prev {
+      top: auto;
+      bottom: -55px;
+      left: 10px;
+    }
   }
 }
