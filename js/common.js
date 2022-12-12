@@ -136,6 +136,38 @@ const trustSwiper = new Swiper('.trust-swiper', {
 	},
 });
 
+// gallery-thumbs
+const galleryThumbs = new Swiper('.gallery-thumbs', {
+	direction: "vertical",
+	spaceBetween: 5,
+	slidesPerView: 5,
+	// loop: true,
+	freeMode: true,
+	loopedSlides: 5, //looped slides should be the same
+	watchSlidesVisibility: true,
+	watchSlidesProgress: true,
+});
+const galleryTop = new Swiper('.gallery-top', {
+	effect: 'fade',
+	fadeEffect: {
+    crossFade: true
+  },
+	zoom: {
+		toggle: true
+    // maxRatio: 5,
+  },
+	spaceBetween: 10,
+	// loop: true,
+	loopedSlides: 5, //looped slides should be the same
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
+	thumbs: {
+		swiper: galleryThumbs,
+	},
+});
+
 // ACCORDION
 var acc = document.getElementsByClassName("accordion");
 

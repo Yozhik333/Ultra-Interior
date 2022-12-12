@@ -585,3 +585,157 @@
     }
   }
 }
+
+.gallery-top {
+  height: 450px;
+  width: 80%;
+  overflow: hidden;
+}
+.gallery-thumbs {
+  width: 20%;
+  padding: 10px 0;
+  overflow: hidden;
+  height: 450px;
+  margin-right: 20px;
+}
+
+.gallery-thumbs .swiper-slide {
+  height: 100px;
+  opacity: 1;
+  width: 100px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.gallery-thumbs .swiper-slide-thumb-active {
+  opacity: 0.2;
+}
+.swiper-container {
+  // height: 300px;
+  // width: 100%;
+}
+
+.product-card {
+  margin-bottom: 80px;
+  display: flex;
+  &__left {
+    display: flex;
+    width: 50%;
+    padding-right: 30px;
+  }
+  &__right {
+    width: 50%;
+    display: flex;
+  }
+  &__buy {
+    width: 50%;
+    padding-right: 20px;
+    h4 {
+      font-size: 26px;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    &-code {
+      margin-bottom: 15px;
+      span {
+        font-weight: bold;
+      }
+    }
+    &-vendor {
+      margin-bottom: 15px;
+      span {
+        font-weight: bold;
+      }
+    }
+    &-series {
+      margin-bottom: 15px;
+    }
+    &-price {
+      margin-bottom: 15px;
+      span {
+        font-size: 32px;
+      }
+    }
+    &-btn {
+      padding: 0.5rem 1rem;
+      font-size: 1.25rem;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.62);
+      background-color: #886d4a;
+      border-color: #886d4a;
+      &:hover {
+        color: #fff;
+        background-color: #a18158;
+        border-color: #a18158;
+      }
+    }
+    &-links {
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      margin-top: 16px;
+      padding-top: 16px;
+      a {
+        display: block;
+        margin-bottom: 8px;
+        svg {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  &__specifications {
+    width: 50%;
+    h4 {
+      font-size: 20px;
+    }
+    &-list {
+      .spec-list-head {
+        border-top: 1px solid #dee2e6;
+      }
+      dl {
+        margin-bottom: 0;
+        dd {
+          margin-bottom: 0;
+        }
+      }
+      .spec-list-dd {
+        border-top: 1px solid #dee2e6;
+        dl {
+          display: flex;
+          dt {
+            width: 50%;
+            font-weight: 400;
+          }
+          dd {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 1023px) {
+    flex-direction: column;
+    &__left {
+      width: 100%;
+      margin-bottom: 20px;
+      padding-right: 0;
+    }
+    &__right {
+      width: 100%;
+    }
+  }
+  @media (max-width: 578px) {
+    &__right {
+      flex-direction: column;
+    }
+    &__buy {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    &__specifications {
+      width: 100%;
+    }
+  }
+}
